@@ -1,0 +1,593 @@
+/* ==========================================
+   CSS CUSTOM PROPERTIES
+   ========================================== */
+:root {
+    /* Colors */
+    --color-black: #000000;
+    --color-white: #FFFFFF;
+    --color-gray: #2A2A2A;
+    --color-gray-light: #4A4A4A;
+    
+    /* Typography */
+    --font-primary: 'Arial', 'Helvetica', sans-serif;
+    --font-size-base: 16px;
+    --font-size-large: 20px;
+    --font-size-xl: 64px;
+    --font-size-xxl: 96px;
+    --line-height-base: 1.6;
+    --line-height-tight: 1.1;
+    
+    /* Spacing */
+    --spacing-xs: 8px;
+    --spacing-sm: 16px;
+    --spacing-md: 32px;
+    --spacing-lg: 64px;
+    --spacing-xl: 128px;
+    
+    /* Layout */
+    --container-max-width: 1200px;
+    --section-padding: 100px 20px;
+    
+    /* Transitions */
+    --transition-fast: 0.2s ease;
+    --transition-base: 0.3s ease;
+    --transition-slow: 0.5s ease;
+    
+    /* Z-index */
+    --z-background: -1;
+    --z-base: 1;
+    --z-overlay: 10;
+    --z-modal: 100;
+}
+
+/* ==========================================
+   RESET & BASE STYLES
+   ========================================== */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: var(--font-size-base);
+}
+
+body {
+    font-family: var(--font-primary);
+    line-height: var(--line-height-base);
+    color: var(--color-white);
+    background-color: var(--color-black);
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    transition: opacity var(--transition-fast);
+}
+
+a:hover, a:focus {
+    opacity: 0.7;
+}
+
+/* ==========================================
+   TYPOGRAPHY
+   ========================================== */
+h1, h2, h3, h4, h5, h6 {
+    line-height: var(--line-height-tight);
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+h1 {
+    font-size: clamp(48px, 10vw, var(--font-size-xxl));
+    letter-spacing: -2px;
+}
+
+h2 {
+    font-size: clamp(32px, 6vw, var(--font-size-xl));
+    letter-spacing: -1px;
+}
+
+p {
+    margin-bottom: var(--spacing-sm);
+}
+
+p:last-child {
+    margin-bottom: 0;
+}
+
+/* ==========================================
+   LAYOUT UTILITIES
+   ========================================== */
+.container {
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+section {
+    padding: var(--section-padding);
+    position: relative;
+}
+
+.section__title {
+    margin-bottom: var(--spacing-lg);
+}
+
+/* ==========================================
+   DECORATIVE X SHAPES
+   ========================================== */
+.x-shapes {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: var(--z-background);
+    overflow: hidden;
+}
+
+.x-shapes::before,
+.x-shapes::after {
+    content: '';
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: url('../images/x-shape.svg') no-repeat center;
+    background-size: contain;
+    opacity: 0.3;
+    animation: float 20s infinite ease-in-out;
+}
+
+.x-shapes::before {
+    top: 10%;
+    right: -100px;
+    animation-delay: 0s;
+}
+
+.x-shapes::after {
+    bottom: 20%;
+    left: -150px;
+    animation-delay: 5s;
+}
+
+/* ==========================================
+   BUTTONS
+   ========================================== */
+.btn {
+    display: inline-block;
+    padding: var(--spacing-sm) var(--spacing-md);
+    border: 2px solid var(--color-white);
+    border-radius: 50px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all var(--transition-base);
+    cursor: pointer;
+}
+
+.btn--primary {
+    background-color: var(--color-white);
+    color: var(--color-black);
+}
+
+.btn--primary:hover,
+.btn--primary:focus {
+    background-color: transparent;
+    color: var(--color-white);
+    opacity: 1;
+}
+
+/* ==========================================
+   HERO SECTION
+   ========================================== */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: var(--spacing-xl) var(--spacing-md);
+    position: relative;
+}
+
+.hero__content {
+    max-width: 900px;
+}
+
+.hero__title {
+    margin-bottom: var(--spacing-md);
+}
+
+.hero__subtitle {
+    font-size: var(--font-size-large);
+    text-transform: uppercase;
+    margin-bottom: var(--spacing-lg);
+    letter-spacing: 2px;
+}
+
+.hero__nav {
+    display: flex;
+    gap: var(--spacing-md);
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: var(--spacing-lg);
+}
+
+.hero__link {
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1px;
+    position: relative;
+}
+
+.hero__link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--color-white);
+    transition: width var(--transition-base);
+}
+
+.hero__link:hover::after,
+.hero__link:focus::after {
+    width: 100%;
+}
+
+.hero__description {
+    font-size: var(--font-size-base);
+    line-height: 1.8;
+}
+
+.hero__scroll {
+    position: absolute;
+    bottom: var(--spacing-md);
+    left: 50%;
+    transform: translateX(-50%);
+    animation: bounce 2s infinite;
+}
+
+/* ==========================================
+   VALUES SECTION
+   ========================================== */
+.values {
+    padding: var(--spacing-xl) var(--spacing-md);
+    background-color: var(--color-black);
+}
+
+.values__item {
+    padding: var(--spacing-lg) 0;
+    border-bottom: 1px solid var(--color-gray-light);
+    text-align: center;
+}
+
+.values__item:last-child {
+    border-bottom: none;
+}
+
+.values__title {
+    font-size: clamp(28px, 5vw, 48px);
+}
+
+/* ==========================================
+   PARCOURS SECTION
+   ========================================== */
+.parcours {
+    background: linear-gradient(180deg, var(--color-black) 0%, var(--color-gray) 100%);
+}
+
+.parcours__content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-lg);
+    align-items: start;
+}
+
+.parcours__text p {
+    margin-bottom: var(--spacing-md);
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+.parcours__gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-md);
+}
+
+.parcours__img {
+    width: 100%;
+    border-radius: 8px;
+    transition: transform var(--transition-base);
+}
+
+.parcours__img--large {
+    grid-column: span 2;
+}
+
+.parcours__img:hover {
+    transform: scale(1.05);
+}
+
+/* ==========================================
+   APPROCHE SECTION
+   ========================================== */
+.approche {
+    background-color: var(--color-black);
+}
+
+.approche__content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.approche__text p {
+    margin-bottom: var(--spacing-md);
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+/* ==========================================
+   COLLABORATIONS SECTION
+   ========================================== */
+.collaborations {
+    background: linear-gradient(180deg, var(--color-gray) 0%, var(--color-black) 100%);
+}
+
+.collaborations__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+}
+
+.collab-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    aspect-ratio: 3/4;
+}
+
+.collab-card__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-slow);
+}
+
+.collab-card__overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: var(--spacing-md);
+    background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+    transform: translateY(100%);
+    transition: transform var(--transition-base);
+}
+
+.collab-card:hover .collab-card__overlay,
+.collab-card:focus-within .collab-card__overlay {
+    transform: translateY(0);
+}
+
+.collab-card:hover .collab-card__img,
+.collab-card:focus-within .collab-card__img {
+    transform: scale(1.1);
+}
+
+.collab-card__name {
+    font-size: 24px;
+    margin-bottom: var(--spacing-xs);
+}
+
+.collab-card__link {
+    display: inline-block;
+    padding: var(--spacing-xs) var(--spacing-md);
+    border: 1px solid var(--color-white);
+    border-radius: 20px;
+    font-size: 14px;
+}
+
+.collaborations__social {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-md);
+}
+
+.collaborations__social svg {
+    transition: transform var(--transition-fast);
+}
+
+.collaborations__social a:hover svg,
+.collaborations__social a:focus svg {
+    transform: scale(1.2);
+}
+
+/* ==========================================
+   CONTACT SECTION
+   ========================================== */
+.contact {
+    background-color: var(--color-gray);
+    text-align: center;
+}
+
+.contact__intro {
+    font-size: var(--font-size-large);
+    margin-bottom: var(--spacing-lg);
+    line-height: 1.6;
+}
+
+.contact__info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    align-items: center;
+}
+
+.contact__item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-sm) var(--spacing-md);
+    border: 1px solid var(--color-white);
+    border-radius: 50px;
+}
+
+.contact__label {
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+.contact__link {
+    font-size: 18px;
+}
+
+/* ==========================================
+   FOOTER
+   ========================================== */
+.footer {
+    padding: var(--spacing-md);
+    text-align: center;
+    font-size: 14px;
+    opacity: 0.6;
+    background-color: var(--color-black);
+}
+
+/* ==========================================
+   BACK TO TOP BUTTON
+   ========================================== */
+.back-to-top {
+    position: fixed;
+    bottom: var(--spacing-md);
+    right: var(--spacing-md);
+    width: 50px;
+    height: 50px;
+    background-color: var(--color-white);
+    color: var(--color-black);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: all var(--transition-base);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    z-index: var(--z-overlay);
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.back-to-top:hover,
+.back-to-top:focus {
+    background-color: var(--color-gray-light);
+    color: var(--color-white);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+}
+
+.back-to-top:active {
+    transform: translateY(-1px);
+}
+
+/* Style pour mobile */
+@media (max-width: 768px) {
+    .back-to-top {
+        bottom: var(--spacing-sm);
+        right: var(--spacing-sm);
+        width: 45px;
+        height: 45px;
+    }
+}
+
+/* ==========================================
+   ANIMATIONS
+   ========================================== */
+@keyframes float {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-30px) rotate(5deg); }
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translate(-50%, 0); }
+    50% { transform: translate(-50%, 10px); }
+}
+
+/* Fade-in animation for scroll */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ==========================================
+   MEDIA QUERIES
+   ========================================== */
+@media (max-width: 768px) {
+    :root {
+        --section-padding: 60px 20px;
+    }
+    
+    .hero__nav {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+    
+    .parcours__content {
+        grid-template-columns: 1fr;
+    }
+    
+    .parcours__gallery {
+        grid-template-columns: 1fr;
+    }
+    
+    .parcours__img--large {
+        grid-column: span 1;
+    }
+    
+    .collaborations__grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact__item {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        padding: var(--spacing-lg) var(--spacing-md);
+    }
+    
+    .values__title {
+        font-size: 24px;
+    }
+}
