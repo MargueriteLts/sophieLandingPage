@@ -1,7 +1,8 @@
 /* ==========================================
    CSS CUSTOM PROPERTIES
    ========================================== */
-:root {
+
+   :root {
     /* Colors */
     --color-black: #000000;
     --color-white: #FFFFFF;
@@ -9,7 +10,8 @@
     --color-gray-light: #4A4A4A;
     
     /* Typography */
-    --font-primary: 'Arial', 'Helvetica', sans-serif;
+    --font-primary: 'bc-novatica-cyr', sans-serif;
+    --font-secondary: 'neue-haas-unica', sans-serif;
     --font-size-base: 16px;
     --font-size-large: 20px;
     --font-size-xl: 64px;
@@ -47,6 +49,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    border: red 1px solid;
 }
 
 html {
@@ -60,6 +63,8 @@ body {
     color: var(--color-white);
     background-color: var(--color-black);
     overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
 }
 
 img {
@@ -192,37 +197,110 @@ section {
    HERO SECTION
    ========================================== */
 .hero {
-    min-height: 100vh;
+    /* S'adapte exactement à la hauteur du viewport */
+    height: 100vh;
+    width: 100vw;
+    min-height: 889px;
+
     display: flex;
+    padding: 40px;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    text-align: center;
-    padding: var(--spacing-xl) var(--spacing-md);
+
     position: relative;
+    /*overflow: hidden;*/
+    
+    /* Hero background SVG - étiré en largeur */
+    /*background-image: url('../images/herobg.svg');
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;*/
+
+    background: url('../images/herobg.svg') 0px 0px / 100% 100% no-repeat;
 }
 
+/* Supprime le ::before si tu n'en as plus besoin */
+/*.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../images/herobg.svg');
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1;
+}*/
+
 .hero__content {
-    max-width: 900px;
+    max-width: 1432px; /* Sécurité */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    z-index: 1;
+    gap: 8px;
 }
 
 .hero__title {
-    margin-bottom: var(--spacing-md);
+    line-height: 0; /* Élimine l'espace blanc sous l'image */
+}
+
+.hero__title-img {
+    /* L'image définit tout */
+    height: 600px;
+    align-self: stretch;
+    aspect-ratio: 358/167;
+}
+
+/* Supprime la classe visually-hidden si elle n'est plus utilisée */
+/*.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}*/
+
+.hero__definition,
+.hero__nav {
+    /* Suivent la largeur du titre */
+    width: 100%;
+    max-width: 100%;
+}
+
+.hero__definition {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-self: stretch;
 }
 
 .hero__subtitle {
     font-size: var(--font-size-large);
     text-transform: uppercase;
-    margin-bottom: var(--spacing-lg);
     letter-spacing: 2px;
+    text-align: left;
+}
+
+.hero__description {
+    font-family: var(--font-secondary);
+    font-size: var(--font-size-base);
+    line-height: 1.8;
+    text-align: right;
 }
 
 .hero__nav {
     display: flex;
-    gap: var(--spacing-md);
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-bottom: var(--spacing-lg);
+    justify-content: space-between;
+    align-items: center;
+    align-self: stretch;
 }
 
 .hero__link {
@@ -246,11 +324,6 @@ section {
 .hero__link:hover::after,
 .hero__link:focus::after {
     width: 100%;
-}
-
-.hero__description {
-    font-size: var(--font-size-base);
-    line-height: 1.8;
 }
 
 .hero__scroll {
@@ -555,6 +628,19 @@ section {
         --section-padding: 60px 20px;
     }
     
+    .hero {
+        padding: var(--spacing-md);
+    }
+
+    .hero__title-img {
+        height: 350px; /* Réduit sur tablette */
+    }
+
+    .hero__definition {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+    
     .hero__nav {
         flex-direction: column;
         gap: var(--spacing-sm);
@@ -584,7 +670,19 @@ section {
 
 @media (max-width: 480px) {
     .hero {
-        padding: var(--spacing-lg) var(--spacing-md);
+        padding: var(--spacing-sm);
+    }
+
+    .hero__title-img {
+        height: 250px; /* Encore plus petit sur mobile */
+    }
+
+    .hero__subtitle {
+        font-size: 16px;
+    }
+
+    .hero__description {
+        font-size: 14px;
     }
     
     .values__title {
