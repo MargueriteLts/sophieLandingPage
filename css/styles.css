@@ -49,7 +49,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    border: red 1px solid;
+    /*border: red 1px solid;*/
 }
 
 html {
@@ -103,7 +103,12 @@ h2 {
 }
 
 p {
-    margin-bottom: var(--spacing-sm);
+    font-family: var(--font-secondary);
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 25px;
+    letter-spacing: -0.6px;
 }
 
 p:last-child {
@@ -171,10 +176,11 @@ section {
    ========================================== */
 .btn {
     display: inline-block;
-    padding: var(--spacing-sm) var(--spacing-md);
+    padding: var(--spacing-sm);
     border: 2px solid var(--color-white);
     border-radius: 50px;
     font-weight: 700;
+    line-height: 1;
     text-transform: uppercase;
     letter-spacing: 1px;
     transition: all var(--transition-base);
@@ -276,23 +282,26 @@ section {
 }
 
 .hero__definition {
+    height: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-self: stretch;
+    /*align-self: stretch;*/
 }
 
 .hero__subtitle {
-    font-size: var(--font-size-large);
-    text-transform: uppercase;
-    letter-spacing: 2px;
+    /*font-size: var(--font-size-large);*/
     text-align: left;
+    font-family: var(--font-primary);
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 600;   
+    line-height: var(--line-height-tight);
+    letter-spacing: -2px;
+    text-transform: uppercase;
 }
 
 .hero__description {
-    font-family: var(--font-secondary);
-    font-size: var(--font-size-base);
-    line-height: 1.8;
     text-align: right;
 }
 
@@ -360,40 +369,95 @@ section {
    PARCOURS SECTION
    ========================================== */
 .parcours {
-    background: linear-gradient(180deg, var(--color-black) 0%, var(--color-gray) 100%);
+    background-color: var(--color-black);
+    padding: var(--spacing-xl) var(--spacing-md);
+}
+
+.parcours .container {
+    max-width: 100%;
+    padding: 0 var(--spacing-lg);
 }
 
 .parcours__content {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 2fr; /* Texte plus étroit, gallery plus large */
     gap: var(--spacing-lg);
     align-items: start;
 }
 
-.parcours__text p {
-    margin-bottom: var(--spacing-md);
-    font-size: 18px;
-    line-height: 1.7;
+.parcours__text {
+    padding-right: var(--spacing-md);
 }
 
+.parcours__text .section__title {
+    font-size: clamp(32px, 5vw, 56px);
+    margin-bottom: var(--spacing-lg);
+    text-transform: uppercase;
+}
+
+.parcours__text p {
+    margin-bottom: var(--spacing-md);
+    font-size: 16px;
+    line-height: 1.7;
+    font-family: var(--font-secondary);
+}
+
+/* Gallery avec superposition */
 .parcours__gallery {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--spacing-md);
+    position: relative;
+    width: 100%;
+    height: 600px; /* Ajuste selon tes besoins */
+    min-height: 500px;
+}
+
+/* Image principale (grande, à gauche) */
+.parcours__img--large {
+    position: absolute;
+    left: 0;
+    top: 24px;
+    width: 48%; /* Prend environ la moitié gauche */
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    /*border: 3px solid var(--color-black); Bordure pour l'effet de superposition*/
+}
+
+/* Image top-right (superposée en haut à droite) */
+.parcours__img:nth-child(2) {
+    position: absolute;
+    left: 394px;
+    top: 0;
+    /*width: 55%;
+    height: 48%;*/
+    width: 341px;
+    height: 341px;
+    object-fit: cover;
+    z-index: 2;
+    /*border: 3px solid var(--color-black);*/
+}
+
+/* Image bottom-right (superposée en bas à droite) */
+.parcours__img:nth-child(3) {
+    position: absolute;
+    left: 534px;
+    top: 280px;
+    /*bottom: 0;*/
+    /*width: 55%;
+    height: 48%;*/
+    width: 454px;
+    height: 271px;
+    object-fit: cover;
+    z-index: 3;
+    /*border: 3px solid var(--color-black);*/
 }
 
 .parcours__img {
-    width: 100%;
-    border-radius: 8px;
-    transition: transform var(--transition-base);
-}
-
-.parcours__img--large {
-    grid-column: span 2;
+    transition: transform var(--transition-base), z-index 0s;
 }
 
 .parcours__img:hover {
-    transform: scale(1.05);
+    transform: scale(1.02);
+    z-index: 10 !important; /* Passe au premier plan au hover */
 }
 
 /* ==========================================
@@ -401,38 +465,145 @@ section {
    ========================================== */
 .approche {
     background-color: var(--color-black);
+    padding: var(--spacing-xl) var(--spacing-md);
+    position: relative;
+    overflow: hidden;
 }
 
+/* Formes X décoratives */
+.approche__x-shapes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.approche__x {
+    position: absolute;
+    opacity: 0.4;
+    filter: brightness(1.2);
+}
+
+/* Positionnement des formes X */
+.approche__x--1 {
+    width: 300px;
+    height: 300px;
+    left: -5%;
+    top: 35%;
+}
+
+.approche__x--2 {
+    width: 200px;
+    height: 200px;
+    left: 45%;
+    top: 10%;
+}
+
+.approche__x--3 {
+    width: 350px;
+    height: 350px;
+    right: -5%;
+    top: 20%;
+}
+
+.approche__x--4 {
+    width: 150px;
+    height: 150px;
+    left: 35%;
+    bottom: 15%;
+}
+
+.approche .container {
+    max-width: 100%;
+    padding: 0 var(--spacing-lg);
+    position: relative;
+    z-index: 1;
+}
+
+.approche .section__title {
+    font-size: clamp(32px, 5vw, 56px);
+    margin-bottom: 44px;
+    text-transform: uppercase;
+}
+
+/* Grid avec 3 colonnes et rows auto */
 .approche__content {
-    max-width: 800px;
-    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /*gap: var(--spacing-lg);*/
+    gap: 20px;
+}
+
+/* Style commun pour les textes */
+.approche__text {
+    font-family: var(--font-secondary);
+    font-size: 16px;
+    line-height: 1.7;
 }
 
 .approche__text p {
     margin-bottom: var(--spacing-md);
-    font-size: 18px;
-    line-height: 1.8;
+}
+
+.approche__text p:last-child {
+    margin-bottom: 0;
+}
+
+/* Positionnement des textes dans la grille */
+.approche__text--col1 {
+    grid-column: 1; /* Colonne 1 */
+    grid-row: 1;    /* Row 1 */
+}
+
+.approche__text--col2 {
+    grid-column: 2; /* Colonne 2 */
+    grid-row: 2;    /* Row 2 */
+}
+
+.approche__text--col3 {
+    grid-column: 3; /* Colonne 3 */
+    grid-row: 3;    /* Row 3 */
 }
 
 /* ==========================================
    COLLABORATIONS SECTION
    ========================================== */
 .collaborations {
-    background: linear-gradient(180deg, var(--color-gray) 0%, var(--color-black) 100%);
+    background-color: var(--color-black);
+    padding: var(--spacing-xl) var(--spacing-md);
+}
+
+.collaborations .container {
+    max-width: 100%;
+    padding: 0 var(--spacing-lg);
+}
+
+.collaborations .section__title {
+    font-size: clamp(32px, 5vw, 56px);
+    margin-bottom: 44px;
+    text-transform: uppercase;
 }
 
 .collaborations__grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(4, 1fr); /* 4 colonnes */
     gap: var(--spacing-md);
-    margin-bottom: var(--spacing-lg);
+    margin-bottom: var(--spacing-xl);
 }
 
 .collab-card {
     position: relative;
     overflow: hidden;
-    border-radius: 8px;
-    aspect-ratio: 3/4;
+    border-radius: 12px;
+    aspect-ratio: 3/4; /* Format portrait */
+}
+
+/* Cache la carte vide visuellement mais garde la structure */
+.collab-card--empty {
+    visibility: hidden;
 }
 
 .collab-card__img {
@@ -460,12 +631,13 @@ section {
 
 .collab-card:hover .collab-card__img,
 .collab-card:focus-within .collab-card__img {
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
 .collab-card__name {
     font-size: 24px;
     margin-bottom: var(--spacing-xs);
+    text-transform: uppercase;
 }
 
 .collab-card__link {
@@ -474,8 +646,16 @@ section {
     border: 1px solid var(--color-white);
     border-radius: 20px;
     font-size: 14px;
+    text-transform: uppercase;
 }
 
+.collab-card__link:hover,
+.collab-card__link:focus {
+    background-color: var(--color-white);
+    color: var(--color-black);
+}
+
+/* Social icons */
 .collaborations__social {
     display: flex;
     justify-content: center;
@@ -497,6 +677,8 @@ section {
 .contact {
     background-color: var(--color-gray);
     text-align: center;
+
+    background: url('../images/herobg.svg') 0px 0px / 100% 100% no-repeat;
 }
 
 .contact__intro {
@@ -623,6 +805,52 @@ section {
 /* ==========================================
    MEDIA QUERIES
    ========================================== */
+@media (max-width: 1024px) {
+    .parcours__content {
+        grid-template-columns: 1fr 1.5fr;
+    }
+    
+    .parcours__gallery {
+        height: 500px;
+        min-height: 400px;
+    }
+
+    .approche__content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    /* Réorganise sur 2 colonnes */
+    .approche__text--col1 {
+        grid-column: 1;
+        grid-row: 1;
+    }
+    
+    .approche__text--col2 {
+        grid-column: 2;
+        grid-row: 1;
+    }
+    
+    .approche__text--col3 {
+        grid-column: 1;
+        grid-row: 2;
+    }
+    
+    /* Formes X */
+    .approche__x--1 { width: 220px; height: 220px; left: -8%; }
+    .approche__x--2 { width: 160px; height: 160px; }
+    .approche__x--3 { width: 280px; height: 280px; right: -8%; }
+    .approche__x--4 { width: 120px; height: 120px; }
+
+    .collaborations__grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 colonnes sur tablette */
+    }
+    
+    /* Cache la carte vide sur tablette */
+    .collab-card--empty {
+        display: none;
+    }
+}
+
 @media (max-width: 768px) {
     :root {
         --section-padding: 60px 20px;
@@ -648,18 +876,80 @@ section {
     
     .parcours__content {
         grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+    
+    .parcours__text {
+        padding-right: 0;
     }
     
     .parcours__gallery {
-        grid-template-columns: 1fr;
+        height: 400px;
+        min-height: 350px;
     }
     
+    /* Ajuste les tailles sur tablette */
     .parcours__img--large {
-        grid-column: span 1;
+        width: 50%;
+    }
+    
+    .parcours__img:nth-child(2),
+    .parcours__img:nth-child(3) {
+        width: 58%;
+    }
+
+    .approche {
+        padding: var(--spacing-lg) var(--spacing-md);
+    }
+    
+    .approche .container {
+        padding: 0 var(--spacing-md);
+    }
+    
+    .approche .section__title {
+        font-size: 32px;
+        margin-bottom: var(--spacing-lg);
+    }
+    
+    /* Une seule colonne sur mobile */
+    .approche__content {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+    
+    /* Tous les textes en colonne */
+    .approche__text--col1,
+    .approche__text--col2,
+    .approche__text--col3 {
+        grid-column: 1;
+    }
+    
+    .approche__text--col1 { grid-row: 1; }
+    .approche__text--col2 { grid-row: 2; }
+    .approche__text--col3 { grid-row: 3; }
+    
+    /* Formes X */
+    .approche__x--1 { width: 180px; height: 180px; left: -15%; top: 25%; }
+    .approche__x--2 { width: 120px; height: 120px; right: -10%; top: 5%; left: auto; }
+    .approche__x--3 { width: 200px; height: 200px; right: -15%; top: 45%; }
+    .approche__x--4 { width: 100px; height: 100px; left: 20%; bottom: 20%; }
+    
+    .collaborations {
+        padding: var(--spacing-lg) var(--spacing-md);
+    }
+    
+    .collaborations .container {
+        padding: 0 var(--spacing-md);
+    }
+    
+    .collaborations .section__title {
+        font-size: 32px;
+        margin-bottom: var(--spacing-lg);
     }
     
     .collaborations__grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr); /* 2 colonnes sur mobile */
+        gap: var(--spacing-sm);
     }
     
     .contact__item {
@@ -683,6 +973,75 @@ section {
 
     .hero__description {
         font-size: 14px;
+    }
+
+    .parcours {
+        padding: var(--spacing-lg) var(--spacing-sm);
+    }
+    
+    .parcours .container {
+        padding: 0 var(--spacing-sm);
+    }
+    
+    .parcours__text .section__title {
+        font-size: 28px;
+        margin-bottom: var(--spacing-md);
+    }
+    
+    .parcours__text p {
+        font-size: 14px;
+    }
+    
+    /* Sur mobile, empile les images différemment */
+    .parcours__gallery {
+        height: 350px;
+        min-height: 300px;
+    }
+    
+    .parcours__img--large {
+        width: 55%;
+        height: 70%;
+        top: 0;
+        left: 0;
+    }
+    
+    .parcours__img:nth-child(2) {
+        width: 60%;
+        height: 45%;
+        right: 0;
+        top: 15%;
+    }
+    
+    .parcours__img:nth-child(3) {
+        width: 60%;
+        height: 45%;
+        right: 0;
+        bottom: 0;
+    }
+
+    .approche .section__title {
+        font-size: 28px;
+    }
+    
+    .approche__text {
+        font-size: 14px;
+    }
+    
+    .approche__x--1 { width: 140px; height: 140px; }
+    .approche__x--2 { width: 90px; height: 90px; }
+    .approche__x--3 { width: 160px; height: 160px; }
+    .approche__x--4 { display: none; }
+
+    .collaborations .section__title {
+        font-size: 28px;
+    }
+    
+    .collaborations__grid {
+        grid-template-columns: 1fr; /* 1 colonne sur petit mobile */
+    }
+    
+    .collab-card__name {
+        font-size: 20px;
     }
     
     .values__title {
