@@ -93,64 +93,6 @@ window.addEventListener('scroll', () => {
 });
 
 // ==========================================
-// ANIMATION ÉTOILES (SECTIONS APPROCHE & VALUES)
-// ==========================================
-
-let scrollAnimationFrame = null;
-let lastScrollY = 0;
-
-// Fonction pour animer la rotation des étoiles pendant le scroll
-function animateStarsOnScroll() {
-    // Sélectionner toutes les étoiles (approche et values)
-    const stars = document.querySelectorAll('.approche__x, .values__x');
-    
-    // Déterminer la direction du scroll
-    const currentScrollY = window.pageYOffset;
-    const scrollDirection = currentScrollY > lastScrollY ? 1 : -1; // 1 = bas, -1 = haut
-    
-    // Calculer la vitesse de scroll
-    const scrollSpeed = Math.abs(currentScrollY - lastScrollY);
-    lastScrollY = currentScrollY;
-    
-    stars.forEach((star, index) => {
-        // Rotation basée sur la direction et vitesse de scroll
-        const currentRotation = parseFloat(star.dataset.rotation || 0);
-        const rotationIncrement = scrollSpeed * 0.1 * scrollDirection;
-        const newRotation = currentRotation + rotationIncrement;
-        
-        star.dataset.rotation = newRotation;
-        star.style.rotate = `${newRotation}deg`;
-    });
-}
-
-// Gérer le scroll
-window.addEventListener('scroll', () => {
-    // Animer pendant le scroll
-    if (scrollAnimationFrame) {
-        cancelAnimationFrame(scrollAnimationFrame);
-    }
-    scrollAnimationFrame = requestAnimationFrame(animateStarsOnScroll);
-});
-
-// Initialiser les étoiles avec l'animation de pulsation continue
-document.addEventListener('DOMContentLoaded', () => {
-    // Sélectionner toutes les étoiles (approche et values)
-    const stars = document.querySelectorAll('.approche__x, .values__x');
-    lastScrollY = window.pageYOffset;
-    
-    stars.forEach((star, index) => {
-        // Initialiser la rotation
-        star.dataset.rotation = 0;
-        
-        // Appliquer l'animation de pulsation en continu
-        const duration = 3 + (index * 0.5); // Différentes durées pour chaque étoile
-        const delay = index * 0.3; // Délai échelonné
-        
-        star.style.animation = `starPulse ${duration}s ease-in-out ${delay}s infinite`;
-    });
-});
-
-// ==========================================
 // RESPONSIVE NAVIGATION (Optional)
 // ==========================================
 

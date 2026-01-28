@@ -180,59 +180,12 @@ section {
 }
 
 /* ==========================================
-   DECORATIVE CIRCLES
-   ========================================== */
-
-/*.highlight-circle {
-  position: relative;
-  display: inline-block;
-  padding: 0 8px;
-}
-
-.highlight-circle::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: calc(100% + 20px);
-  height: calc(100% + 15px);
-  border: 2px solid var(--color-white);
-  border-radius: 50%;
-  z-index: -1;
-}*/
-
-.highlight-circle {
-  position: relative;
-  display: inline-block;
-  /*padding: 0 8px;*/
-}
-
-.highlight-circle::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: calc(100% + 20px);
-  /*width: 100%;*/
-  height: calc(100% + 10px);
-  background-image: url('../images/circle-hand-drawn.png');
-  /*background-size: contain;*/
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-  background-position: center;
-  z-index: -1;
-  opacity: 0.8;
-}
-
-/* ==========================================
    BUTTONS
    ========================================== */
 .btn {
     display: inline-block;
     padding: var(--spacing-sm);
-    border: 2px solid black;
+    border: 2px solid var(--color-white);
     border-radius: 50px;
     font-weight: 700;
     line-height: 1;
@@ -243,18 +196,15 @@ section {
 }
 
 .btn--primary {
-    background: linear-gradient(90deg, #FFFFFF 0%, #33B34B 26%, #68BD99 57%, #2F614F 78%, #5ABA82 100%);
+    background-color: var(--color-white);
     color: var(--color-black);
-    /*border-color: transparent;*/
 }
 
 .btn--primary:hover,
 .btn--primary:focus {
-    background: black;
-    background-color: black;
+    background-color: transparent;
     color: var(--color-white);
     opacity: 1;
-    border: 2px solid var(--color-white);
 }
 
 /* ==========================================
@@ -299,7 +249,7 @@ section {
 }*/
 
 .hero__content {
-    /*max-width: 1432px; Sécurité*/
+    max-width: 1432px; /* Sécurité */
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -409,64 +359,9 @@ section {
     background-color: var(--color-black);
 }
 
-/* Formes X décoratives */
-.values__x-shapes {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: 0;
-}
-
-.values__x {
-    position: absolute;
-    /*opacity: 0.4;*/
-    /*filter: brightness(1.2);*/
-    transition: transform 0.1s ease-out;
-    will-change: transform;
-}
-
-/* Positionnement des formes X */
-.values__x--1 {
-    width: 300px;
-    height: auto;
-    left: -5%;
-    top: 50%;
-}
-
-.values__x--2 {
-    width: 200px;
-    height: auto;
-    left: 15%;
-    top: 10%;
-}
-
-.values__x--3 {
-    width: 350px;
-    height: auto;
-    right: -5%;
-    top: 20%;
-}
-
-.values__x--4 {
-    width: 125px;
-    height: auto;
-    right: 30%;
-    bottom: 7%;
-}
-
-.values__x--5 {
-    width: 125px;
-    height: auto;
-    right: 28%;
-    bottom: 5%;
-}
-
 .values__item {
     padding: var(--spacing-lg) 0;
-    /*border-bottom: 1px solid var(--color-gray-light);*/
+    border-bottom: 1px solid var(--color-gray-light);
     text-align: center;
 }
 
@@ -483,7 +378,7 @@ section {
    ========================================== */
 .parcours {
     background-color: var(--color-black);
-    /*padding: var(--spacing-xl) var(--spacing-md);*/
+    padding: var(--spacing-xl) var(--spacing-md);
 }
 
 .parcours .container {
@@ -499,9 +394,9 @@ section {
     align-items: start;
 }
 
-/*.parcours__text {
+.parcours__text {
     padding-right: var(--spacing-md);
-}*/
+}
 
 .parcours__text .section__title {
     font-size: clamp(32px, 5vw, 56px);
@@ -527,39 +422,42 @@ section {
 /* Image principale (grande, à gauche) */
 .parcours__img--large {
     position: absolute;
-    left: 0px;
+    left: 0;
     top: 24px;
-    /*width: 450px;*/
-    width: calc(30vw - 40px);
+    width: 48%; /* Prend environ la moitié gauche */
     height: 100%;
     object-fit: cover;
     z-index: 1;
+    /*border: 3px solid var(--color-black); Bordure pour l'effet de superposition*/
 }
 
 /* Image top-right (superposée en haut à droite) */
 .parcours__img:nth-child(2) {
     position: absolute;
-    /*left: 400px;*/
-    /*right: 250px;*/
-    right: 13vw;
+    left: 394px;
     top: 0;
+    /*width: 55%;
+    height: 48%;*/
     width: 341px;
     height: 341px;
     object-fit: cover;
     z-index: 2;
+    /*border: 3px solid var(--color-black);*/
 }
 
 /* Image bottom-right (superposée en bas à droite) */
 .parcours__img:nth-child(3) {
     position: absolute;
-    /*left: 520px;*/
-    /*right: 50px;*/
-    right: -6vw;
+    left: 534px;
     top: 280px;
+    /*bottom: 0;*/
+    /*width: 55%;
+    height: 48%;*/
     width: 454px;
     height: 271px;
     object-fit: cover;
     z-index: 3;
+    /*border: 3px solid var(--color-black);*/
 }
 
 .parcours__img {
@@ -576,7 +474,7 @@ section {
    ========================================== */
 .approche {
     background-color: var(--color-black);
-    /*padding: var(--spacing-xl) var(--spacing-md);*/
+    padding: var(--spacing-xl) var(--spacing-md);
     position: relative;
     overflow: hidden;
 }
@@ -596,16 +494,14 @@ section {
     position: absolute;
     /*opacity: 0.4;*/
     /*filter: brightness(1.2);*/
-    transition: transform 0.1s ease-out;
-    will-change: transform;
 }
 
 /* Positionnement des formes X */
 .approche__x--1 {
     width: 300px;
     height: auto;
-    left: -3%;
-    top: 60%;
+    left: -5%;
+    top: 50%;
 }
 
 .approche__x--2 {
@@ -693,7 +589,7 @@ section {
    ========================================== */
 .collaborations {
     background-color: var(--color-black);
-    /*padding: var(--spacing-xl) var(--spacing-md);*/
+    padding: var(--spacing-xl) var(--spacing-md);
 }
 
 .collaborations .container {
@@ -830,7 +726,7 @@ section {
 
 .contact .container {
     max-width: 100%;
-    /*padding: 0 var(--spacing-lg);*/
+    padding: 0 var(--spacing-lg);
     margin-bottom: 288px;
     /*margin-bottom: var(--spacing-xxl);*/
 }
@@ -889,29 +785,10 @@ section {
     background-size: 100% 100%;
 }
 
-.contact a {
-  transition: color 0.3s ease;
-}
-
-.contact a:hover {
-  color: #00ffa6;
-}
-
-/*.contact a:hover {
-  background: linear-gradient(45deg, #FFFFFF 10%, #33B34B 26%, #68BD99 57%, #2F614F 78%, #5ABA82 90%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}*/
-
 /* ==========================================
    FOOTER
    ========================================== */
 .footer {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    justify-content: space-between;
     padding: var(--spacing-md);
     text-align: center;
     font-size: 14px;
@@ -983,16 +860,6 @@ section {
 @keyframes bounce {
     0%, 100% { transform: translate(-50%, 0); }
     50% { transform: translate(-50%, 10px); }
-}
-
-/* Animation de pulsation douce pour les étoiles */
-@keyframes starPulse {
-    0%, 100% { 
-        scale: 1;
-    }
-    50% { 
-        scale: 1.05;
-    }
 }
 
 /* Fade-in animation for scroll */
