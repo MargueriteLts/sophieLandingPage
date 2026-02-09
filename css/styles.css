@@ -1,8 +1,7 @@
 /* ==========================================
    CSS CUSTOM PROPERTIES
    ========================================== */
-
-   :root {
+:root {
     /* Colors */
     --color-black: #000000;
     --color-white: #FFFFFF;
@@ -49,7 +48,6 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    /*border: red 1px solid;*/
 }
 
 html {
@@ -65,10 +63,7 @@ body {
     overflow-x: hidden;
     display: flex;
     flex-direction: column;
-<<<<<<< HEAD
-=======
     min-width: 320px;
->>>>>>> work
 }
 
 img {
@@ -123,11 +118,6 @@ h3 {
     letter-spacing: -1px;
 }
 
-h3 {
-    font-size: clamp(32px, 6vw, var(--font-size-l));
-    letter-spacing: -1px;
-}
-
 p {
     font-family: var(--font-secondary);
     font-size: 18px;
@@ -155,13 +145,7 @@ section {
 
 .section__title {
     position: relative;
-<<<<<<< HEAD
-    /*margin-bottom: var(--spacing-lg);*/
     margin-bottom: 24px;
-    /*z-index: 3;*/
-=======
-    margin-bottom: 24px;
->>>>>>> work
 }
 
 /* ==========================================
@@ -205,50 +189,6 @@ section {
 /* ==========================================
    DECORATIVE CIRCLES
    ========================================== */
-<<<<<<< HEAD
-
-/*.highlight-circle {
-  position: relative;
-  display: inline-block;
-  padding: 0 8px;
-}
-
-.highlight-circle::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: calc(100% + 20px);
-  height: calc(100% + 15px);
-  border: 2px solid var(--color-white);
-  border-radius: 50%;
-  z-index: -1;
-}*/
-
-.highlight-circle {
-  position: relative;
-  display: inline-block;
-  /*padding: 0 8px;*/
-}
-
-.highlight-circle::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: calc(100% + 20px);
-  /*width: 100%;*/
-  height: calc(100% + 10px);
-  background-image: url('../images/circle-hand-drawn.png');
-  /*background-size: contain;*/
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-  background-position: center;
-  z-index: -1;
-  opacity: 0.8;
-=======
 .highlight-circle {
     position: relative;
     display: inline-block;
@@ -268,7 +208,6 @@ section {
     background-position: center;
     z-index: -1;
     opacity: 0.8;
->>>>>>> work
 }
 
 /* ==========================================
@@ -282,10 +221,6 @@ section {
     font-weight: 700;
     line-height: 1;
     text-transform: uppercase;
-<<<<<<< HEAD
-    /*letter-spacing: 1px;*/
-=======
->>>>>>> work
     transition: all var(--transition-base);
     cursor: pointer;
     margin: 2px;
@@ -294,7 +229,6 @@ section {
 .btn--primary {
     background: linear-gradient(90deg, #FFFFFF 0%, #33B34B 26%, #68BD99 57%, #2F614F 78%, #5ABA82 100%);
     color: var(--color-black);
-    /*border-color: transparent;*/
 }
 
 .btn--primary:hover,
@@ -310,28 +244,6 @@ section {
    HERO SECTION
    ========================================== */
 .hero {
-<<<<<<< HEAD
-    /* S'adapte exactement à la hauteur du viewport */
-    height: 100vh;
-    width: 100vw;
-    min-height: 889px;
-
-    display: flex;
-    padding: 40px;
-    flex-direction: column;
-    align-items: center;
-
-    position: relative;
-    /*overflow: hidden;*/
-    
-    /* Hero background SVG - étiré en largeur */
-    /*background-image: url('../images/herobg.svg');
-    background-size: 100% 100%;
-    background-position: center;
-    background-repeat: no-repeat;*/
-
-    background: url('../images/herobg.jpg') 0px 0px / 100% 100% no-repeat;
-=======
     height: 100vh;
     width: 100vw;
     min-height: 889px;
@@ -342,66 +254,15 @@ section {
     position: relative;
     overflow: hidden;
     background: url('../images/herobg.jpg') center bottom / 100% 100% no-repeat;
->>>>>>> work
 }
 
-/* Supprime le ::before si tu n'en as plus besoin */
-/*.hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('../images/herobg.svg');
-    background-size: 100% 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    z-index: -1;
-}*/
-
 .hero__content {
-<<<<<<< HEAD
-    /*max-width: 1432px; Sécurité*/
-=======
->>>>>>> work
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     position: relative;
     z-index: 1;
     gap: 8px;
-<<<<<<< HEAD
-}
-
-.hero__title {
-    line-height: 0; /* Élimine l'espace blanc sous l'image */
-}
-
-.hero__title-img {
-    /* L'image définit tout */
-    height: 600px;
-    align-self: stretch;
-    aspect-ratio: 358/167;
-}
-
-/* Supprime la classe visually-hidden si elle n'est plus utilisée */
-/*.visually-hidden {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    margin: -1px;
-    padding: 0;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border: 0;
-}*/
-
-.hero__definition,
-.hero__nav {
-    /* Suivent la largeur du titre */
-=======
     width: 100%;
     max-width: 95vw;
 }
@@ -419,7 +280,6 @@ section {
 
 .hero__definition,
 .hero__nav {
->>>>>>> work
     width: 100%;
     max-width: 100%;
 }
@@ -429,22 +289,9 @@ section {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-<<<<<<< HEAD
-<<<<<<< HEAD
-    /*align-self: stretch;*/
 }
 
 .hero__subtitle {
-    /*font-size: var(--font-size-large);*/
-=======
-    /*flex-wrap: wrap;*/
-    /*gap: 24px;*/
-=======
->>>>>>> work
-}
-
-.hero__subtitle {
->>>>>>> work
     text-align: left;
     font-family: var(--font-primary);
     font-size: 40px;
@@ -453,26 +300,12 @@ section {
     line-height: var(--line-height-tight);
     letter-spacing: -2px;
     text-transform: uppercase;
-<<<<<<< HEAD
-=======
     width: 636px;
-<<<<<<< HEAD
-    /*width: 100%;*/
->>>>>>> work
-=======
->>>>>>> work
 }
 
 .hero__description {
     text-align: right;
-<<<<<<< HEAD
-=======
     width: 420px;
-<<<<<<< HEAD
-    /*width: 100%;*/
->>>>>>> work
-=======
->>>>>>> work
 }
 
 .hero__nav {
@@ -485,10 +318,6 @@ section {
 .hero__link {
     text-transform: uppercase;
     font-weight: 600;
-<<<<<<< HEAD
-    /*letter-spacing: 1px;*/
-=======
->>>>>>> work
     position: relative;
 }
 
@@ -577,67 +406,8 @@ section {
     bottom: 5%;
 }
 
-/* Formes X décoratives */
-.values__x-shapes {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: 0;
-}
-
-.values__x {
-    position: absolute;
-    /*opacity: 0.4;*/
-    /*filter: brightness(1.2);*/
-    transition: transform 0.1s ease-out;
-    will-change: transform;
-}
-
-/* Positionnement des formes X */
-.values__x--1 {
-    width: 300px;
-    height: auto;
-    left: -5%;
-    top: 50%;
-}
-
-.values__x--2 {
-    width: 200px;
-    height: auto;
-    left: 15%;
-    top: 10%;
-}
-
-.values__x--3 {
-    width: 350px;
-    height: auto;
-    right: -5%;
-    top: 20%;
-}
-
-.values__x--4 {
-    width: 125px;
-    height: auto;
-    right: 30%;
-    bottom: 7%;
-}
-
-.values__x--5 {
-    width: 125px;
-    height: auto;
-    right: 28%;
-    bottom: 5%;
-}
-
 .values__item {
     padding: var(--spacing-lg) 0;
-<<<<<<< HEAD
-    /*border-bottom: 1px solid var(--color-gray-light);*/
-=======
->>>>>>> work
     text-align: center;
 }
 
@@ -650,11 +420,7 @@ section {
    ========================================== */
 .parcours {
     background-color: var(--color-black);
-<<<<<<< HEAD
-    /*padding: var(--spacing-xl) var(--spacing-md);*/
-=======
     overflow-x: hidden;
->>>>>>> work
 }
 
 .parcours .container {
@@ -664,111 +430,53 @@ section {
 
 .parcours__content {
     display: grid;
-<<<<<<< HEAD
-    grid-template-columns: 1fr 2fr; /* Texte plus étroit, gallery plus large */
-    /*gap: var(--spacing-lg);*/
-=======
     grid-template-columns: repeat(3, 1fr);
->>>>>>> work
     gap: 20px;
     align-items: start;
 }
 
-<<<<<<< HEAD
-/*.parcours__text {
-    padding-right: var(--spacing-md);
-}*/
-
 .parcours__text .section__title {
-    font-size: clamp(32px, 5vw, 56px);
-=======
-.parcours__text .section__title {
-<<<<<<< HEAD
-    /*font-size: clamp(32px, 3vw, 56px);*/
->>>>>>> work
-=======
->>>>>>> work
     margin-bottom: var(--spacing-lg);
     text-transform: uppercase;
 }
 
 .parcours__text p {
-    /*font-family: var(--font-secondary);*/
     margin-bottom: var(--spacing-md);
-<<<<<<< HEAD
-    /*font-size: 18px;*/
-    /*line-height: 1.7;*/
-=======
->>>>>>> work
 }
 
-/* Gallery avec superposition */
 .parcours__gallery {
     position: relative;
     width: 100%;
-<<<<<<< HEAD
-    height: 600px; /* Ajuste selon tes besoins */
-=======
     height: 600px;
->>>>>>> work
     min-height: 500px;
 }
 
-/* Image principale (grande, à gauche) */
 .parcours__img--large {
     position: absolute;
     left: 0px;
     top: 24px;
-<<<<<<< HEAD
-    /*width: 450px;*/
-=======
->>>>>>> work
     width: calc(30vw - 40px);
     height: 100%;
     object-fit: cover;
     z-index: 1;
 }
 
-<<<<<<< HEAD
-/* Image top-right (superposée en haut à droite) */
-.parcours__img:nth-child(2) {
-    position: absolute;
-    /*left: 400px;*/
-    /*right: 250px;*/
-    right: 13vw;
-    top: 0;
-    width: 341px;
-    height: 341px;
-=======
 .parcours__img:nth-child(2) {
     position: absolute;
     left: 25vw;
     top: 0;
     width: 341px;
     height: auto;
->>>>>>> work
     object-fit: cover;
     z-index: 2;
 }
 
-<<<<<<< HEAD
-/* Image bottom-right (superposée en bas à droite) */
-.parcours__img:nth-child(3) {
-    position: absolute;
-    /*left: 520px;*/
-    /*right: 50px;*/
-    right: -6vw;
-    top: 280px;
-    width: 454px;
-    height: 271px;
-=======
 .parcours__img:nth-child(3) {
     position: absolute;
     left: 30vw;
     top: 280px;
     width: 400px;
     height: auto;
->>>>>>> work
     object-fit: cover;
     z-index: 3;
 }
@@ -779,11 +487,7 @@ section {
 
 .parcours__img:hover {
     transform: scale(1.02);
-<<<<<<< HEAD
-    z-index: 10 !important; /* Passe au premier plan au hover */
-=======
     z-index: 10 !important;
->>>>>>> work
 }
 
 /* ==========================================
@@ -791,18 +495,10 @@ section {
    ========================================== */
 .approche {
     background-color: var(--color-black);
-<<<<<<< HEAD
-    /*padding: var(--spacing-xl) var(--spacing-md);*/
-=======
->>>>>>> work
     position: relative;
     overflow: hidden;
 }
 
-<<<<<<< HEAD
-/* Formes X décoratives */
-=======
->>>>>>> work
 .approche__x-shapes {
     position: absolute;
     top: 0;
@@ -815,19 +511,10 @@ section {
 
 .approche__x {
     position: absolute;
-<<<<<<< HEAD
-    /*opacity: 0.4;*/
-    /*filter: brightness(1.2);*/
-=======
->>>>>>> work
     transition: transform 0.1s ease-out;
     will-change: transform;
 }
 
-<<<<<<< HEAD
-/* Positionnement des formes X */
-=======
->>>>>>> work
 .approche__x--1 {
     width: 300px;
     height: auto;
@@ -840,8 +527,6 @@ section {
     height: auto;
     left: 45%;
     top: 10%;
-<<<<<<< HEAD
-=======
 }
 
 .approche__x--3 {
@@ -875,58 +560,14 @@ section {
 .approche .section__title {
     margin-bottom: 44px;
     text-transform: uppercase;
->>>>>>> work
 }
 
-.approche__x--3 {
-    width: 350px;
-    height: auto;
-    right: -5%;
-    top: 20%;
-}
-
-.approche__x--4 {
-    width: 125px;
-    height: auto;
-    left: 35%;
-    bottom: 13%;
-}
-
-.approche__x--5 {
-    width: 125px;
-    height: auto;
-    left: 33%;
-    bottom: 11%;
-}
-
-.approche .container {
-    max-width: 100%;
-    padding: 0 var(--spacing-lg);
-    position: relative;
-    z-index: 1;
-}
-
-.approche .section__title {
-    font-size: clamp(32px, 5vw, 56px);
-    margin-bottom: 44px;
-    text-transform: uppercase;
-}
-
-/* Grid avec 3 colonnes et rows auto */
 .approche__content {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-<<<<<<< HEAD
-    /*gap: var(--spacing-lg);*/
     gap: 20px;
 }
 
-/* Style commun pour les textes */
-=======
-    gap: 20px;
-}
-
->>>>>>> work
 .approche__text {
     font-family: var(--font-secondary);
     font-size: 16px;
@@ -941,22 +582,6 @@ section {
     margin-bottom: 0;
 }
 
-<<<<<<< HEAD
-/* Positionnement des textes dans la grille */
-.approche__text--col1 {
-    grid-column: 1; /* Colonne 1 */
-    grid-row: 1;    /* Row 1 */
-}
-
-.approche__text--col2 {
-    grid-column: 2; /* Colonne 2 */
-    grid-row: 2;    /* Row 2 */
-}
-
-.approche__text--col3 {
-    grid-column: 3; /* Colonne 3 */
-    grid-row: 3;    /* Row 3 */
-=======
 .approche__text--col1 {
     grid-column: 1;
     grid-row: 1;
@@ -970,7 +595,6 @@ section {
 .approche__text--col3 {
     grid-column: 3;
     grid-row: 3;
->>>>>>> work
 }
 
 /* ==========================================
@@ -978,10 +602,6 @@ section {
    ========================================== */
 .collaborations {
     background-color: var(--color-black);
-<<<<<<< HEAD
-    /*padding: var(--spacing-xl) var(--spacing-md);*/
-=======
->>>>>>> work
 }
 
 .collaborations .container {
@@ -990,46 +610,22 @@ section {
 }
 
 .collaborations .section__title {
-<<<<<<< HEAD
-<<<<<<< HEAD
-    font-size: clamp(32px, 5vw, 56px);
-=======
-    /*font-size: clamp(32px, 5vw, 56px);*/
->>>>>>> work
-=======
->>>>>>> work
     margin-bottom: 44px;
     text-transform: uppercase;
 }
 
 .collaborations__grid {
     display: grid;
-<<<<<<< HEAD
-    grid-template-columns: repeat(4, 1fr); /* 4 colonnes */
-    gap: var(--spacing-md);
-    margin-bottom: var(--spacing-xl);
-    /*margin-bottom: 44px;*/
-=======
     grid-template-columns: repeat(4, 1fr);
     gap: var(--spacing-md);
     margin-bottom: var(--spacing-xl);
->>>>>>> work
 }
 
 .collab-card {
     position: relative;
     overflow: hidden;
     border-radius: 12px;
-<<<<<<< HEAD
-    aspect-ratio: 3/4; /* Format portrait */
-}
-
-/* Cache la carte vide visuellement mais garde la structure */
-.collab-card--empty {
-    visibility: hidden;
-=======
     aspect-ratio: 3/4;
->>>>>>> work
 }
 
 .collab-card--empty {
@@ -1077,15 +673,6 @@ section {
     border-radius: 20px;
     font-size: 14px;
     text-transform: uppercase;
-<<<<<<< HEAD
-=======
-}
-
-.collab-card__link:hover,
-.collab-card__link:focus {
-    background-color: var(--color-white);
-    color: var(--color-black);
->>>>>>> work
 }
 
 .collab-card__link:hover,
@@ -1094,7 +681,6 @@ section {
     color: var(--color-black);
 }
 
-/* Social icons */
 .collaborations__social {
     display: flex;
     justify-content: center;
@@ -1115,35 +701,6 @@ section {
    ========================================== */
 .contact {
     background: url('../images/herobg.jpg') 0px 0px / 100% 100% no-repeat;
-<<<<<<< HEAD
-}
-
-/*.contact {
-    background-color: var(--color-gray);
-    padding-block: 5rem;
-    position: relative;
-    overflow: hidden;
-}
-
-.contact-bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: fill;
-    z-index: 0;
-}*/
-
-.contact__x-shape {
-    position: absolute;
-    left: 22%;
-    top: 33%;
-    width: 500px;
-    height: auto;
-    pointer-events: none;
-    /*z-index: 0;*/
-=======
     overflow-y: hidden;
 }
 
@@ -1154,54 +711,22 @@ section {
     width: 50%;
     height: auto;
     pointer-events: none;
->>>>>>> work
     opacity: 0.9;
     filter: brightness(1.2);
 }
 
 .contact .container {
     max-width: 100%;
-<<<<<<< HEAD
-    /*padding: 0 var(--spacing-lg);*/
-    margin-bottom: 288px;
-    /*margin-bottom: var(--spacing-xxl);*/
-}
-
-.contact__intro {
-    /*font-size: var(--font-size-large);*/
-    /*margin-bottom: var(--spacing-lg);*/
-    /*line-height: 1.6;*/
-    flex: 1;
-=======
     margin-bottom: 288px;
 }
 
 .contact__intro {
     flex: 1;
     min-width: 202px;
->>>>>>> work
 }
 
 .contact__info {
     display: flex;
-<<<<<<< HEAD
-<<<<<<< HEAD
-    flex-direction: row;
-    /*gap: var(--spacing-md);*/
-    gap: 20px;
-    /*align-items: center;*/
-    justify-content: space-between;
-}
-
-.contact__links {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    gap: 20px;
-=======
-    /*flex-direction: row;*/
-=======
->>>>>>> work
     flex-direction: column;
     gap: 44px;
     justify-content: space-between;
@@ -1212,45 +737,26 @@ section {
     flex-direction: column;
     flex: 1;
     gap: 8px;
->>>>>>> work
 }
 
 .contact__item {
     display: flex;
-<<<<<<< HEAD
-<<<<<<< HEAD
-    gap: var(--spacing-sm);
     align-items: end;
-    /*padding: var(--spacing-sm) var(--spacing-md);*/
-    /*border: 1px solid var(--color-white);*/
-    /*border-radius: 50px;*/
-=======
-    /*gap: var(--spacing-sm);*/
-=======
->>>>>>> work
-    align-items: end;
->>>>>>> work
 }
 
 .contact__label {
     font-weight: 700;
     text-transform: uppercase;
     font-size: 14px;
-<<<<<<< HEAD
-    color: grey;
-=======
     line-height: 14px;
     color: grey;
     padding-right: 16px;
->>>>>>> work
 }
 
 .contact__link {
     font-family: var(--font-secondary);
     font-size: 40px;
     line-height: 40px;
-<<<<<<< HEAD
-=======
     padding-right: 8px;
 }
 
@@ -1269,32 +775,7 @@ section {
 
 .contact a:hover {
     color: #00ffa6;
->>>>>>> work
 }
-
-.contact__arrow {
-    width: 30px;
-    height: 30px;
-    background: url('../images/arrow.svg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-size: 100% 100%;
-}
-
-.contact a {
-  transition: color 0.3s ease;
-}
-
-.contact a:hover {
-  color: #00ffa6;
-}
-
-/*.contact a:hover {
-  background: linear-gradient(45deg, #FFFFFF 10%, #33B34B 26%, #68BD99 57%, #2F614F 78%, #5ABA82 90%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}*/
 
 /* ==========================================
    FOOTER
@@ -1369,10 +850,6 @@ section {
     50% { transform: translate(-50%, 10px); }
 }
 
-<<<<<<< HEAD
-/* Animation de pulsation douce pour les étoiles */
-=======
->>>>>>> work
 @keyframes starPulse {
     0%, 100% { 
         scale: 1;
@@ -1382,10 +859,6 @@ section {
     }
 }
 
-<<<<<<< HEAD
-/* Fade-in animation for scroll */
-=======
->>>>>>> work
 .fade-in {
     opacity: 0;
     transform: translateY(30px);
@@ -1400,11 +873,6 @@ section {
 /* ==========================================
    MEDIA QUERIES
    ========================================== */
-<<<<<<< HEAD
-@media (max-width: 1024px) {
-    .parcours__content {
-        grid-template-columns: 1fr 1.5fr;
-=======
 
 /* Frame 2: Image responsive, section fixe */
 @media (max-width: 1400px) {
@@ -1468,7 +936,6 @@ section {
 
     .parcours__content {
         grid-template-columns: 1fr 1fr;
->>>>>>> work
     }
     
     .parcours__gallery {
@@ -1476,44 +943,6 @@ section {
         min-height: 400px;
     }
 
-<<<<<<< HEAD
-    .approche__content {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    
-    /* Réorganise sur 2 colonnes */
-    .approche__text--col1 {
-        grid-column: 1;
-        grid-row: 1;
-    }
-    
-    .approche__text--col2 {
-        grid-column: 2;
-        grid-row: 1;
-    }
-    
-    .approche__text--col3 {
-        grid-column: 1;
-        grid-row: 2;
-    }
-    
-    /* Formes X */
-    .approche__x--1 { width: 220px; height: 220px; left: -8%; }
-    .approche__x--2 { width: 160px; height: 160px; }
-    .approche__x--3 { width: 280px; height: 280px; right: -8%; }
-    .approche__x--4 { width: 120px; height: 120px; }
-
-    .collaborations__grid {
-        grid-template-columns: repeat(3, 1fr); /* 3 colonnes sur tablette */
-    }
-    
-    /* Cache la carte vide sur tablette */
-    .collab-card--empty {
-        display: none;
-    }
-}
-
-=======
     .parcours__img:nth-child(2) {
         left: 20vw;
         width: 250px;
@@ -1574,7 +1003,6 @@ section {
 /* ==========================================
    RESPONSIVE MOBILE (< 768px)
    ========================================== */
->>>>>>> work
 @media (max-width: 768px) {
     /* Variables responsive pour mobile */
     :root {
@@ -1612,19 +1040,6 @@ section {
     
     .hero__description {
         max-width: 434px;
-    }
-    
-    .hero {
-        padding: var(--spacing-md);
-    }
-
-    .hero__title-img {
-        height: 350px; /* Réduit sur tablette */
-    }
-
-    .hero__definition {
-        flex-direction: column;
-        gap: var(--spacing-sm);
     }
     
     .hero__nav {
@@ -1671,19 +1086,11 @@ section {
     
     .parcours__content {
         grid-template-columns: 1fr;
-<<<<<<< HEAD
-        gap: var(--spacing-md);
-    }
-    
-    .parcours__text {
-        padding-right: 0;
-=======
         gap: 8px;
     }
     
     .parcours__text .section__title {
         margin-bottom: 24px;
->>>>>>> work
     }
     
     .parcours__gallery {
@@ -1691,38 +1098,7 @@ section {
         min-height: 350px;
     }
     
-    /* Ajuste les tailles sur tablette */
     .parcours__img--large {
-<<<<<<< HEAD
-        width: 50%;
-    }
-    
-    .parcours__img:nth-child(2),
-    .parcours__img:nth-child(3) {
-        width: 58%;
-    }
-
-    .approche {
-        padding: var(--spacing-lg) var(--spacing-md);
-    }
-    
-    .approche .container {
-        padding: 0 var(--spacing-md);
-    }
-    
-    .approche .section__title {
-        font-size: 32px;
-        margin-bottom: var(--spacing-lg);
-    }
-    
-    /* Une seule colonne sur mobile */
-    .approche__content {
-        grid-template-columns: 1fr;
-        gap: var(--spacing-md);
-    }
-    
-    /* Tous les textes en colonne */
-=======
         width: auto;
     }
     
@@ -1759,7 +1135,6 @@ section {
         font-size: 16px;
     }
     
->>>>>>> work
     .approche__text--col1,
     .approche__text--col2,
     .approche__text--col3 {
@@ -1770,39 +1145,6 @@ section {
     .approche__text--col2 { grid-row: 2; }
     .approche__text--col3 { grid-row: 3; }
     
-<<<<<<< HEAD
-<<<<<<< HEAD
-    /* Formes X */
-    .approche__x--1 { width: 180px; height: 180px; left: -15%; top: 25%; }
-    .approche__x--2 { width: 120px; height: 120px; right: -10%; top: 5%; left: auto; }
-    .approche__x--3 { width: 200px; height: 200px; right: -15%; top: 45%; }
-    .approche__x--4 { width: 100px; height: 100px; left: 20%; bottom: 20%; }
-    
-    .collaborations {
-        padding: var(--spacing-lg) var(--spacing-md);
-    }
-    
-    .collaborations .container {
-        padding: 0 var(--spacing-md);
-    }
-    
-    .collaborations .section__title {
-        font-size: 32px;
-        margin-bottom: var(--spacing-lg);
-    }
-    
-    .collaborations__grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 colonnes sur mobile */
-        gap: var(--spacing-sm);
-=======
-    /*.approche__x--1 { width: 180px; left: -15%; top: 5%; }
-    .approche__x--2 { width: 120px; right: -10%; top: 25%; }
-    .approche__x--3 { width: 200px; right: -15%; top: 55%; }
-    .approche__x--4 { width: 100px; left: 5%; bottom: 15%; }
-    .approche__x--5 { display: none; }*/
-    
-=======
->>>>>>> work
     /* COLLABORATIONS */
     .collaborations {
         padding: 64px 20px;
@@ -1828,11 +1170,6 @@ section {
     /* CONTACT */
     .contact {
         padding: 64px 20px;
-<<<<<<< HEAD
-        /*background-size: cover;*/
->>>>>>> work
-=======
->>>>>>> work
     }
     
     .contact .container {
@@ -1886,98 +1223,12 @@ section {
 
 /* Très petits écrans */
 @media (max-width: 480px) {
-<<<<<<< HEAD
-    .hero {
-        padding: var(--spacing-sm);
-    }
-
-    .hero__title-img {
-        height: 250px; /* Encore plus petit sur mobile */
-    }
-
-    .hero__subtitle {
-        font-size: 16px;
-    }
-
-    .hero__description {
-        font-size: 14px;
-    }
-
-    .parcours {
-        padding: var(--spacing-lg) var(--spacing-sm);
-    }
-    
-    .parcours .container {
-        padding: 0 var(--spacing-sm);
-    }
-    
-    .parcours__text .section__title {
-        font-size: 28px;
-        margin-bottom: var(--spacing-md);
-    }
-    
-    .parcours__text p {
-        font-size: 14px;
-    }
-    
-    /* Sur mobile, empile les images différemment */
-    .parcours__gallery {
-        height: 350px;
-        min-height: 300px;
-    }
-    
-    .parcours__img--large {
-        width: 55%;
-        height: 70%;
-        top: 0;
-        left: 0;
-    }
-    
-    .parcours__img:nth-child(2) {
-        width: 60%;
-        height: 45%;
-        right: 0;
-        top: 15%;
-    }
-    
-    .parcours__img:nth-child(3) {
-        width: 60%;
-        height: 45%;
-        right: 0;
-        bottom: 0;
-    }
-
-    .approche .section__title {
-        font-size: 28px;
-    }
-    
-    .approche__text {
-        font-size: 14px;
-    }
-    
-    .approche__x--1 { width: 140px; height: 140px; }
-    .approche__x--2 { width: 90px; height: 90px; }
-    .approche__x--3 { width: 160px; height: 160px; }
-    .approche__x--4 { display: none; }
-
-    .collaborations .section__title {
-        font-size: 28px;
-    }
-    
-    .collaborations__grid {
-        grid-template-columns: 1fr; /* 1 colonne sur petit mobile */
-    }
-    
-    .collab-card__name {
-        font-size: 20px;
-=======
     .container {
         padding: 0;
     }
 
     .hero__title-img {
         max-height: 35vh;
->>>>>>> work
     }
     
     .hero__subtitle {
