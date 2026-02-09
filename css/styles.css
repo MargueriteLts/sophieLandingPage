@@ -226,6 +226,7 @@ section {
     text-transform: uppercase;
     transition: all var(--transition-base);
     cursor: pointer;
+    margin: 2px;
 }
 
 .btn--primary {
@@ -810,6 +811,7 @@ section {
     /*opacity: 0.6;*/
     z-index: 3;
     background-color: var(--color-black);
+    color: #606060;
 }
 
 /* ==========================================
@@ -1073,13 +1075,15 @@ section {
     h3 {
         font-size: 5vw;
     }
+
+    .container {
+        padding: 0;
+    }
     
     /* HERO */
     .hero {
-        min-height: 100vh;
-        padding: 20px;
-        /*background-size: cover;
-        background-position: center;*/
+        /*min-height: 100vh;*/
+        padding: 20px 20px 70px;
     }
     
     .hero__content {
@@ -1088,22 +1092,9 @@ section {
         gap: 16px;
     }
 
-    /*.hero__title-img {
-        height: auto;
-        width: 100%;
-        max-height: 40vh;
-        align-items: center;
-        align-self: stretch;
-    }*/
-
     .hero__definition {
         align-items: center;
     }
-    
-    /*.hero__subtitle {
-        font-size: clamp(24px, 6vw, 32px);
-        text-align: left;
-    }*/
     
     .hero__description {
         max-width: 434px;
@@ -1115,11 +1106,38 @@ section {
         width: 100%;
     }
     
-    .hero__link,
+    /*.hero__link,
     .btn {
         width: 100%;
         text-align: center;
         padding: 14px 20px;
+    }*/
+
+    /*.hero__nav {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.95);
+        backdrop-filter: blur(10px);
+        z-index: 100;
+        flex-direction: row;
+        justify-content: space-around;
+        gap: 0;
+        width: 100%;
+        padding: 12px 16px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    */
+    .hero__link {
+        display: none;
+    }
+    
+    .btn {
+        width: 100%;
+        text-align: center;
+        padding: 14px 20px;
+        border: none;
     }
     
     .hero__scroll {
@@ -1281,7 +1299,7 @@ section {
     }
     
     .contact .container {
-        margin-bottom: 0;
+        margin-bottom: 88px;
         padding: 0 20px;
     }
     
