@@ -72,7 +72,6 @@ body {
 }
 
 img {
-    /*max-width: 100%;*/
     height: auto;
     display: block;
 }
@@ -115,9 +114,7 @@ h1 {
 }
 
 h2 {
-    /*font-size: clamp(32px, 4vw, 56px);*/
     font-size: clamp(32px, 5vw, 56px);
-    /*font-size: 5vw;*/
     letter-spacing: -1px;
 }
 
@@ -339,7 +336,6 @@ section {
     width: 100vw;
     min-height: 889px;
     display: flex;
-    /*padding: 40px var(--section-padding);*/
     padding-bottom: 100px;
     flex-direction: column;
     align-items: center;
@@ -434,6 +430,7 @@ section {
     flex-direction: row;
     justify-content: space-between;
 <<<<<<< HEAD
+<<<<<<< HEAD
     /*align-self: stretch;*/
 }
 
@@ -442,6 +439,8 @@ section {
 =======
     /*flex-wrap: wrap;*/
     /*gap: 24px;*/
+=======
+>>>>>>> work
 }
 
 .hero__subtitle {
@@ -457,7 +456,10 @@ section {
 <<<<<<< HEAD
 =======
     width: 636px;
+<<<<<<< HEAD
     /*width: 100%;*/
+>>>>>>> work
+=======
 >>>>>>> work
 }
 
@@ -466,7 +468,10 @@ section {
 <<<<<<< HEAD
 =======
     width: 420px;
+<<<<<<< HEAD
     /*width: 100%;*/
+>>>>>>> work
+=======
 >>>>>>> work
 }
 
@@ -640,10 +645,6 @@ section {
     border-bottom: none;
 }
 
-.values__title {
-    /*font-size: clamp(28px, 5vw, 48px);*/
-}
-
 /* ==========================================
    PARCOURS SECTION
    ========================================== */
@@ -682,7 +683,10 @@ section {
     font-size: clamp(32px, 5vw, 56px);
 =======
 .parcours__text .section__title {
+<<<<<<< HEAD
     /*font-size: clamp(32px, 3vw, 56px);*/
+>>>>>>> work
+=======
 >>>>>>> work
     margin-bottom: var(--spacing-lg);
     text-transform: uppercase;
@@ -869,7 +873,6 @@ section {
 }
 
 .approche .section__title {
-    /*font-size: clamp(32px, 5vw, 56px);*/
     margin-bottom: 44px;
     text-transform: uppercase;
 >>>>>>> work
@@ -988,9 +991,12 @@ section {
 
 .collaborations .section__title {
 <<<<<<< HEAD
+<<<<<<< HEAD
     font-size: clamp(32px, 5vw, 56px);
 =======
     /*font-size: clamp(32px, 5vw, 56px);*/
+>>>>>>> work
+=======
 >>>>>>> work
     margin-bottom: 44px;
     text-transform: uppercase;
@@ -1143,11 +1149,8 @@ section {
 
 .contact__x-shape {
     position: absolute;
-    /*left: 22%;*/
     right: 0;
-    /*top: 33%;*/
     align-items: center;
-    /*width: 500px;*/
     width: 50%;
     height: auto;
     pointer-events: none;
@@ -1182,6 +1185,7 @@ section {
 .contact__info {
     display: flex;
 <<<<<<< HEAD
+<<<<<<< HEAD
     flex-direction: row;
     /*gap: var(--spacing-md);*/
     gap: 20px;
@@ -1196,6 +1200,8 @@ section {
     gap: 20px;
 =======
     /*flex-direction: row;*/
+=======
+>>>>>>> work
     flex-direction: column;
     gap: 44px;
     justify-content: space-between;
@@ -1212,6 +1218,7 @@ section {
 .contact__item {
     display: flex;
 <<<<<<< HEAD
+<<<<<<< HEAD
     gap: var(--spacing-sm);
     align-items: end;
     /*padding: var(--spacing-sm) var(--spacing-md);*/
@@ -1219,6 +1226,8 @@ section {
     /*border-radius: 50px;*/
 =======
     /*gap: var(--spacing-sm);*/
+=======
+>>>>>>> work
     align-items: end;
 >>>>>>> work
 }
@@ -1403,8 +1412,6 @@ section {
         width: 100%;
         height: auto;
         min-height: auto;
-        /*padding-bottom: var(--section-padding);*/
-        /*padding: var(--section-padding);*/
     }
     
     .hero__title-img {
@@ -1412,20 +1419,9 @@ section {
         width: 100%;
     }
 
-    /*.parcours__img:nth-child(3) {
-        width: 500px;
-    }*/
-
-    /*.contact__x-shape {
-        filter: brightness(60%);
-    }*/
-
     .contact__link {
-        /*font-size: clamp(30px, 99%, 40px);*/
-        /*font-size: clamp(30px, 2rem + 1.5vw, 40px);*/
         font-size: clamp(10px, 3.5vw, 40px);
         line-height: clamp(10px, 3.5vw, 40px);
-        /*font-size: 40px;*/
     }
 }
 
@@ -1436,7 +1432,6 @@ section {
     }
 
     .hero__subtitle {
-        /*font-size: 36px;*/
         font-size: clamp(24px, 2.7vw, 36px);
         width: 100%;
         text-align: center;
@@ -1463,19 +1458,6 @@ section {
     .parcours__img:nth-child(3) {
         left: 20vw;
     }
-
-    /*.contact__intro {
-        max-width: 202px;
-    }*/
-
-    /*.contact__links {
-        flex: 0;
-    }*/
-    
-    /*.contact__link {*/
-        /*font-size: clamp(30px, 70%, 40px);*/
-        /*font-size: 40px;*/
-    /*}*/
 }
 
 @media (max-width: 1024px) {
@@ -1546,12 +1528,7 @@ section {
     .approche__content {
         display: flex;
         flex-direction: column;
-        /*grid-template-columns: repeat(2, 1fr);*/
     }
-
-    /*.approche__text {
-        max-width: 50%;
-    }*/
     
     .approche__text--col1 {
         max-width: 70%;
@@ -1572,10 +1549,6 @@ section {
     .approche__x--3 { width: 280px; height: 280px; right: -8%; }
     .approche__x--4 { width: 120px; height: 120px; left: 25%; bottom: 5%;}
     .approche__x--5 { left: 20%; bottom: 5%;}
-
-    /*.collaborations__grid {
-        grid-template-columns: repeat(3, 1fr);
-    }*/
 
     .collaborations__grid {
         grid-template-columns: 1fr 1fr;
@@ -1606,7 +1579,6 @@ section {
     /* Variables responsive pour mobile */
     :root {
         --section-padding: 60px 20px;
-        /*--spacing-lg: 32px;*/
         --spacing-md: 24px;
         --spacing-sm: 12px;
     }
@@ -1625,7 +1597,6 @@ section {
     
     /* HERO */
     .hero {
-        /*min-height: 100vh;*/
         padding: 20px 20px 70px;
     }
     
@@ -1662,29 +1633,6 @@ section {
         width: 100%;
     }
     
-    /*.hero__link,
-    .btn {
-        width: 100%;
-        text-align: center;
-        padding: 14px 20px;
-    }*/
-
-    /*.hero__nav {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        background: rgba(0, 0, 0, 0.95);
-        backdrop-filter: blur(10px);
-        z-index: 100;
-        flex-direction: row;
-        justify-content: space-around;
-        gap: 0;
-        width: 100%;
-        padding: 12px 16px;
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
-    }
-    */
     .hero__link {
         display: none;
     }
@@ -1712,20 +1660,6 @@ section {
     .values__x--1 {left: -20%;}
     .values__x--3 {right: -25%;}
     
-    /*.values__x--1 { width: 180px; left: -15%; top: 10%; }
-    .values__x--2 { width: 120px; right: -10%; top: 30%; }
-    .values__x--3 { width: 200px; left: -10%; top: 55%; }
-    .values__x--4 { width: 100px; right: 10%; bottom: 25%; }
-    .values__x--5 { display: none; }*/
-    
-    /*.values__item {
-        padding: 32px 0;
-    }*/
-    
-    /*.values__title {
-        font-size: clamp(28px, 6vw, 42px);
-    }*/
-    
     /* PARCOURS */
     .parcours {
         padding: 64px 20px;
@@ -1748,16 +1682,9 @@ section {
     }
     
     .parcours__text .section__title {
-        /*font-size: clamp(32px, 8vw, 48px);*/
         margin-bottom: 24px;
 >>>>>>> work
     }
-    
-    /*.parcours__text p {
-        font-size: 16px;
-        line-height: 22px;
-        margin-bottom: 16px;
-    }*/
     
     .parcours__gallery {
         height: 400px;
@@ -1797,14 +1724,9 @@ section {
     /* Tous les textes en colonne */
 =======
         width: auto;
-        /*height: 70%;
-        top: 0;
-        left: 0;*/
     }
     
     .parcours__img:nth-child(2) {
-        /*left: 40%;*/
-        /*width: 45vw;*/
         left: 200px;
         width: clamp(40%, 45vw, 50%);
     }
@@ -1825,7 +1747,6 @@ section {
     }
     
     .approche .section__title {
-        /*font-size: clamp(32px, 8vw, 48px);*/
         margin-bottom: 32px;
     }
     
@@ -1849,6 +1770,7 @@ section {
     .approche__text--col2 { grid-row: 2; }
     .approche__text--col3 { grid-row: 3; }
     
+<<<<<<< HEAD
 <<<<<<< HEAD
     /* Formes X */
     .approche__x--1 { width: 180px; height: 180px; left: -15%; top: 25%; }
@@ -1879,6 +1801,8 @@ section {
     .approche__x--4 { width: 100px; left: 5%; bottom: 15%; }
     .approche__x--5 { display: none; }*/
     
+=======
+>>>>>>> work
     /* COLLABORATIONS */
     .collaborations {
         padding: 64px 20px;
@@ -1889,19 +1813,8 @@ section {
     }
     
     .collaborations .section__title {
-        /*font-size: clamp(32px, 8vw, 48px);*/
         margin-bottom: 32px;
     }
-    
-    /*.collaborations__grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 24px;
-        margin-bottom: 64px;
-    }*/
-
-    /*.collab-card__overlay {
-        transform: none;
-    }*/
     
     .collab-card__name {
         font-size: 24px;
@@ -1915,7 +1828,10 @@ section {
     /* CONTACT */
     .contact {
         padding: 64px 20px;
+<<<<<<< HEAD
         /*background-size: cover;*/
+>>>>>>> work
+=======
 >>>>>>> work
     }
     
@@ -1925,19 +1841,15 @@ section {
     }
     
     .contact__x-shape {
-        /*width: 350px;*/
         width: 50%;
         left: auto;
         right: 0;
         top: 20%;
-        /*transform: translateX(-50%);*/
-        /*opacity: 0.5;*/
         filter: brightness(70%);
         
     }
     
     .contact .section__title {
-        /*font-size: clamp(32px, 8vw, 48px);*/
         margin-bottom: 24px;
     }
     
@@ -1946,40 +1858,14 @@ section {
         gap: 32px;
     }
     
-    /*.contact__intro {
-        font-size: clamp(18px, 5vw, 24px);
-    }*/
-    
     .contact__links {
         gap: 8px;
     }
     
-    /*.contact__item {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 8px;
-    }*/
-    
-    /*.contact__label {
-        font-size: 14px;
-    }*/
-    
-    /*.contact__link {
-        font-size: clamp(24px, 3.5vw, 32px);
-        line-height: 1;
-        word-break: break-word;
-    }*/
-    
     .contact__arrow {
         min-width: 16px;
         min-height: 16px;
-        /*background-size: contain;
-        background-position: left center;*/
     }
-
-    /*.contact__link {
-        font-size: 24px;
-    }*/
     
     /* FOOTER */
     .footer {
@@ -2107,13 +1993,8 @@ section {
         min-height: 300px;
     }
 
-    /*.parcours__img--large {
-        left: -60px;
-    }*/
-
     .parcours__img:nth-child(2) {
         width: 200px;
-        /*left: 205px;*/
         right: 0;
     }
 
@@ -2121,8 +2002,6 @@ section {
         width: 230px;
         left: 150px;
         top: 150px;
-        /*left: auto;
-        right: -10px;*/
     }
 
     .approche__text {
@@ -2132,10 +2011,6 @@ section {
     .approche__text--col2, .approche__text--col3 {
         margin: 0;
     }
-    
-    /*.values__title {
-        font-size: 28px;
-    }*/
 
     .collaborations__grid {
         display: flex;
