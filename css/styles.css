@@ -63,6 +63,7 @@ body {
     overflow-x: hidden;
     display: flex;
     flex-direction: column;
+    min-width: 320px;
 }
 
 img {
@@ -357,6 +358,7 @@ section {
 .values {
     padding: var(--spacing-xl) var(--spacing-md);
     background-color: var(--color-black);
+    overflow-x: hidden;
 }
 
 .values__x-shapes {
@@ -429,6 +431,7 @@ section {
    ========================================== */
 .parcours {
     background-color: var(--color-black);
+    overflow-x: hidden;
 }
 
 .parcours .container {
@@ -712,6 +715,7 @@ section {
    ========================================== */
 .contact {
     background: url('../images/herobg.jpg') 0px 0px / 100% 100% no-repeat;
+    overflow-y: hidden;
 }
 
 .contact__x-shape {
@@ -803,7 +807,8 @@ section {
     padding: var(--spacing-md);
     text-align: center;
     font-size: 14px;
-    opacity: 0.6;
+    /*opacity: 0.6;*/
+    z-index: 3;
     background-color: var(--color-black);
 }
 
@@ -948,6 +953,10 @@ section {
     }
     .approche__x--5 {
         left: 35%;
+    }
+
+    .parcours__img:nth-child(3) {
+        left: 20vw;
     }
 
     /*.contact__intro {
@@ -1323,8 +1332,8 @@ section {
     }*/
     
     .contact__arrow {
-        width: 16px;
-        height: 16px;
+        min-width: 16px;
+        min-height: 16px;
         /*background-size: contain;
         background-position: left center;*/
     }
@@ -1352,6 +1361,10 @@ section {
 
 /* Très petits écrans */
 @media (max-width: 480px) {
+    .container {
+        padding: 0;
+    }
+
     .hero__title-img {
         max-height: 35vh;
     }
@@ -1368,12 +1381,49 @@ section {
         height: 350px;
         min-height: 300px;
     }
+
+    /*.parcours__img--large {
+        left: -60px;
+    }*/
+
+    .parcours__img:nth-child(2) {
+        width: 200px;
+        /*left: 205px;*/
+        right: 0;
+    }
+
+    .parcours__img:nth-child(3) {
+        width: 230px;
+        left: 150px;
+        top: 150px;
+        /*left: auto;
+        right: -10px;*/
+    }
+
+    .approche__text {
+        max-width: 100%;
+    }
+
+    .approche__text--col2, .approche__text--col3 {
+        margin: 0;
+    }
     
-    .values__title {
+    /*.values__title {
         font-size: 28px;
+    }*/
+
+    .collaborations__grid {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        margin-bottom: 64px;
+    }
+
+    .collab-card__name {
+        font-size: 20px;
     }
     
     .contact__link {
-        font-size: 22px;
+        font-size: 4vw;
     }
 }
